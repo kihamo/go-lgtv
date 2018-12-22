@@ -60,8 +60,8 @@ type OnClickPayload struct {
 
 // ToastPayload is the payload send with a "createToast" request
 type ToastPayload struct {
-	Message       string         `json:"message"`
-	IconData      string         `json:"iconData"`
-	IconExtension string         `json:"iconExtension"`
-	OnClick       OnClickPayload `json:"onClick"`
+	Message       string          `json:"message"`
+	IconData      string          `json:"iconData,omitempty"`
+	IconExtension string          `json:"iconExtension,omitempty"`
+	OnClick       *OnClickPayload `json:"onClick,omitempty"`
 }
