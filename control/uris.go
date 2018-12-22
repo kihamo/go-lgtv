@@ -28,4 +28,6 @@ const (
 	uriLaunchApp = "ssap://system.launcher/launch"
 
 	uriTurnOff = "ssap://system/turnOff"
+
+	uriCreateToast = "palm://system.notifications/createToast"
 )

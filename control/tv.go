@@ -361,6 +361,12 @@ func (tv *LgTv) TurnOn() error {
 	return ErrInsufficientNetworkDetails
 }
 
+func (tv *LgTv) ShowToast(message string) error {
+	return tv.doRequest(uriCreateToast, connection.ToastPayload{
+		Message: message,
+	}, nil)
+}
+
 func (tv *LgTv) doRequest(uri string, reqPayload interface{}, respPayload interface{}) error {
 	if tv.IsConnected {
 		return tv.conn.Request(uri, reqPayload, respPayload)

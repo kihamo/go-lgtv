@@ -50,3 +50,18 @@ type LaunchAppPayload struct {
 	ContentID  string      `json:"contentId"`
 	Parameters interface{} `json:"params"`
 }
+
+// OnClickPayload is the payload send with a "createToast" request
+type OnClickPayload struct {
+	ApplicationID string      `json:"appId,omitempty"`
+	Target        string      `json:"target,omitempty"`
+	Parameters    interface{} `json:"params,omitempty"`
+}
+
+// ToastPayload is the payload send with a "createToast" request
+type ToastPayload struct {
+	Message       string         `json:"message"`
+	IconData      string         `json:"iconData"`
+	IconExtension string         `json:"iconExtension"`
+	OnClick       OnClickPayload `json:"onClick"`
+}
